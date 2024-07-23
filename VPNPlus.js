@@ -10,16 +10,19 @@
 
 # VPNPlus（2022-08-26)
 ^https?:\/\/206\.189\.78\.230\/receipt\/apple url script-response-body https://raw.githubusercontent.com/GalaxySpace/KingPlus/main/VPNPlus.js
+
 [mitm] 
 hostname = 206.189.78.230
 
 ***********************************/
 
-
+var body = $response.body;
 var url = $request.url;
+var obj = JSON.parse(body);
 const tmp1 = '/receipt/apple';
 
 if (url.indexOf(tmp1) != -1) {
-	var body = $response.body.replace(/ExpireTime":\d+/g,'ExpireTime":992503620603');
+	obj.ExpireTime = '992503620603';
+	body = JSON.stringify(obj);
 }
 $done({body});
