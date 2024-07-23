@@ -17,12 +17,9 @@ hostname = 206.189.78.230
 
 
 var url = $request.url;
-var body = $response.body;
-var obj = JSON.parse(body);
 const tmp1 = '/receipt/apple';
 
 if (url.indexOf(tmp1) != -1) {
-	obj = obj.replace(/ExpireTime":\d+/g,'ExpireTime":992503620603');
-	body = JSON.stringify(obj);
+	var body = $response.body.replace(/ExpireTime":\d+/g,'ExpireTime":992503620603');
 }
 $done({body});
