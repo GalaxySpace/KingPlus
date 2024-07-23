@@ -1,21 +1,3 @@
-/***********************************
-> 應用名稱：VPNPlus
-> 軟件版本：x.2
-> 腳本作者：KingPlus
-> 更新時間：2024-07-23
-> 腳本功能：⛔无限体验⛔
-> 特别說明：本腳本僅供學習交流使用，禁止售賣
- 
-[rewrite_local]
-
-# VPNPlus（2022-08-26)
-^https?:\/\/206\.189\.78\.230\/receipt\/apple url script-response-body https://raw.githubusercontent.com/GalaxySpace/KingPlus/main/VPNPlus.js
-[mitm] 
-hostname = 206.189.78.230
-
-***********************************/
-
-
 var url = $request.url;
 var body = $response.body;
 var obj = JSON.parse(body);
